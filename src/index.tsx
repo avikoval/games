@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
-import { App } from './pages/App';
-import { Test } from './pages/Test';
+import { App } from './pages/_app';
+import { Test } from './pages/test';
 import 'normalize.css';
 import './styles/index.css';
 
@@ -12,10 +12,12 @@ const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <App />,
-	},
-	{
-		path: "/test",
-		element: <Test />,
+		children: [
+			{
+				path: "test",
+				element: <Test />,
+			},
+		],
 	},
 ]);
 
