@@ -4,7 +4,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import { App } from './pages/_app';
-import { Test } from './pages/test';
+import { TicTacToePage } from './pages/tic-tac-toe';
 import 'normalize.css';
 import './styles/index.css';
 
@@ -14,8 +14,8 @@ const router = createBrowserRouter([
 		element: <App />,
 		children: [
 			{
-				path: "test",
-				element: <Test />,
+				path: "tic-tac-toe",
+				element: <TicTacToePage />,
 			},
 		],
 	},

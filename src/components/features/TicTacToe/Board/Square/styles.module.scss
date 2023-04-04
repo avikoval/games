@@ -1,0 +1,20 @@
+.square {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin: 1px;
+	width: calc(300px / 3 - 2px);
+	height: calc(300px / 3 - 2px);
+	background: #373737;
+	box-sizing: border-box;
+	border-radius: 5px;
+
+	&:hover {
+		background: #3b3b3b;
+	}
+	&:active {
+		background: #4b4b4b;
+	}
+}
