@@ -33,10 +33,7 @@ export const NavBar = () => {
 					alt="logo"
 				/>
 			</Link>
-			<Link className={styles["navbar__link"]} to={`test`}>Test</Link>
-			<Link className={styles["navbar__link"]} to={`test`}>Test</Link>
-			<Link className={styles["navbar__link"]} to={`test`}>Test</Link>
-			<Link className={styles["navbar__link"]} to={`test`}>Test</Link>
+			<Link className={styles["navbar__link"]} to={`tic-tac-toe`}>TTT</Link>
 		</div>
 	)
 }
