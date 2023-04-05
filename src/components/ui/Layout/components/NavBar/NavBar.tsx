@@ -29,11 +29,12 @@ export const NavBar = () => {
 			<Link className={styles["navbar__link"]} to={`/`}>
 				<img 
 					src={logo} 
-					className={styles["navbar__link__img"]} 
+					className={styles["navbar__link-img"]} 
 					alt="logo"
 				/>
 			</Link>
-			<Link className={styles["navbar__link"]} to={`tic-tac-toe`}>TTT</Link>
+			<Link className={styles["navbar__link"]} to={`xogame`}>XO</Link>
+			<Link className={styles["navbar__link"]} to={`codewars`}>CW</Link>
 		</div>
 	)
 }

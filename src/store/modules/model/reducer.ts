@@ -1,6 +1,6 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import { testReducer } from "./test/slice";
+import { testReducer } from "./codwars-user/slice";
 
 export const modelReducers = combineReducers({
-	testReducer,
+	testReducer: testReducer,
 });
