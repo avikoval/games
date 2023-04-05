@@ -1,6 +1,6 @@
-import { SquareType } from "../features/TicTacToe/Board/types";
+import { XOGameState } from "../../store/modules/view/xo-game/types";
 
-export const checkVictory = (squares: SquareType[]): boolean => {
+export const checkVictory = ({squares, mark}: XOGameState): boolean => {
 	let combinationsToVictory = [
 		[0, 1, 2],
 		[3, 4, 5],
@@ -14,15 +14,12 @@ export const checkVictory = (squares: SquareType[]): boolean => {
 
 	for (let i = 0; i < combinationsToVictory.length; i++) {
 		let line = combinationsToVictory[i]
-		
-		if( squares[line[0]] === 1 && 
-			squares[line[1]] === 1 && 
-			squares[line[2]] === 1 )
-		{ return true }
-		
-		if( squares[line[0]] === 0 && 
-			squares[line[1]] === 0 && 
-			squares[line[2]] === 0 )
+
+		const prevMark = mark === 1 ? 0 : 1;
+
+		if( squares[line[0]] === prevMark && 
+			squares[line[1]] === prevMark && 
+			squares[line[2]] === prevMark )
 		{ return true }
 	}
 	return false;

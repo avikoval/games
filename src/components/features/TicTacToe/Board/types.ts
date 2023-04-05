@@ -1,1 +1,0 @@
-export type SquareType = number | null;

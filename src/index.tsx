@@ -4,18 +4,23 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import { App } from './pages/_app';
-import { TicTacToePage } from './pages/tic-tac-toe';
+import { XOGamePage } from './pages/xo-game';
+import { CodeWarsPage } from './pages/code-wars';
 import 'normalize.css';
-import './styles/index.css';
+import './styles/global.css';
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <App />,
 		children: [
 			{
-				path: "tic-tac-toe",
-				element: <TicTacToePage />,
+				path: "xogame",
+				element: <XOGamePage />,
+			},
+			{
+				path: "codewars",
+				element: <CodeWarsPage />,
 			},
 		],
 	},
