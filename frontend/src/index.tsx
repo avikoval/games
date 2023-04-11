@@ -5,12 +5,15 @@ import { Provider } from 'react-redux';
 import { store } from './store';
 import { App } from './pages/_app';
 import { XOGamePage } from './pages/xo-game';
-import { CodeWarsPage } from './pages/code-wars';
-import { SignInPage } from './pages/auth';
+import { SignInPage } from './pages/sign-in';
 import 'normalize.css';
 import './styles/global.css';
 
 export const router = createBrowserRouter([
+	{
+		path: "signin",
+		element: <SignInPage />,
+	},
 	{
 		path: "/",
 		element: <App />,
@@ -19,15 +22,7 @@ export const router = createBrowserRouter([
 				path: "xogame",
 				element: <XOGamePage />,
 			},
-			{
-				path: "codewars",
-				element: <CodeWarsPage />,
-			},
 		],
-	},
-	{
-		path: "signin",
-		element: <SignInPage />,
 	},
 ]);
 

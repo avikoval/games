@@ -1,9 +1,10 @@
-import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { INITIAL_STATE, SLICE_NAME } from "./constansts";
 import axios from "../../../../axios";
 import { SignInFormValues } from "../../../../components/features/SingIn/types";
 
-export const fetchAuthLodin = createAsyncThunk('auth/fetchAuth', 
+export const fetchAuthLodin = createAsyncThunk(
+	'auth/fetchAuthLodin', 
     async (params: SignInFormValues) => {
         const { data } = await axios.post("/auth", params)
         return data
@@ -15,10 +16,12 @@ const authorizationSlice = createSlice({
 	reducers: {},
 	extraReducers: (builder) => {
 		builder.addCase(fetchAuthLodin.pending, (state, action) => {
-			state.accessToken = action.payload
+			state = INITIAL_STATE
 		});
 		builder.addCase(fetchAuthLodin.fulfilled, (state, action) => {
 			state.accessToken = action.payload.accessToken
+			const accessToken = action.payload.accessToken
+			localStorage.setItem("token", accessToken)
 		});
 		builder.addCase(fetchAuthLodin.rejected, (state) => {
 			state = INITIAL_STATE

@@ -9,8 +9,7 @@ import { SignInFormValues } from "./types";
 export const SignIn = () => {
 	const dispatch = useAppDispatch()
 
-	const {
-        // control,
+ 	const {
 		register,
         handleSubmit,
         setError,
@@ -24,8 +23,6 @@ export const SignIn = () => {
 	const onSubmit = (e: SignInFormValues) => {
 		dispatch(fetchAuthLodin(e))
 	}
-
-	
 
 	return (
 		<div className={styles["wrapper"]}>
