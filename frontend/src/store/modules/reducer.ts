@@ -1,8 +1,8 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import { viewReducers } from "./view/reducer";
-import { modelsReducers } from "./models/reducer";
+import { authorizationReducer } from "./models/authorization";
 
 export const rootReducers = combineReducers({
     view: viewReducers,
-    models: modelsReducers,
+    authorizationReducer: authorizationReducer,
 });

@@ -1,29 +1,30 @@
-import app from './app.js'
+import express from 'express';
+import cors from 'cors';
+import dotenv from "dotenv";
+import cookieParser from 'cookie-parser';
+import router from './routes/index.js';
+import mongoose from 'mongoose';
+import errorMiddleware from './middleware/error-middleware.js';
 
-const port = process.env.PORT || 3001
 
-app.listen(port, (err) => {
+dotenv.config();
+const PORT = process.env.PORT || 4000;
+
+mongoose.connect(process.env.BD_URL)
+.then(() => console.log(`db was connected... success`))
+.catch((error) => console.warn(`db ${error}... error`))
+
+const app = express()
+app.use(express.json())
+app.use(cookieParser())
+app.use(cors())
+app.use('/api', router)
+app.use(errorMiddleware)
+
+
+app.listen(PORT, (err) => {
 	if(err) {
-		return console.log(err);
-		
-	}
-	console.log(`Server has been started http://localhost:${port}...`)
-
-// process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
-
-// app.use(cors({
-// 	exposedHeaders: '*'
-// }))
-
-// app.use("/", createProxyMiddleware({
-// 	target: API_SERVICE_URL,
-// 	changeOrigin: true,
-// 	ws: true,
-// 	logLevel: "debug"
-// }))
-
-// app.get('/codewars', (req, res) => {
-// 	console.log(res);
-// });
-
+		console.log(err);
+	} 
+	console.log(`server http://localhost:${PORT}... success`)
 })

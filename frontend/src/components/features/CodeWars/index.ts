@@ -1,1 +1,0 @@
-export { CodeWars } from "./CodeWars";

@@ -1,7 +1,13 @@
-import { SignIn } from "../components/features/SingIn"
+import { ReactNode } from "react"
 
-export const SignInPage = () => {
-	return (
-		<SignIn />
-	)
+type SignInProps = {
+	children: ReactNode;
+}
+
+export const Auth = (props: SignInProps) => {
+	const { children } = props;
+
+	
+
+	return <>{children}</>
 }
