@@ -11,7 +11,7 @@ import './styles/global.css';
 
 export const router = createBrowserRouter([
 	{
-		path: "signin",
+		path: "sign_in",
 		element: <SignInPage />,
 	},
 	{
