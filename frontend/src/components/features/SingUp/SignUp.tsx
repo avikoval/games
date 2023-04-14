@@ -6,10 +6,10 @@ import { joiResolver } from "@hookform/resolvers/joi";
 import { DEFAULT_FORM_STATE, LINK_SIGN_UP, LOGIN_PLACEHOLDER, PASSWORD_PLACEHOLDER, SUBMIT_LABEL, SUPPORT_LABEL, VALIDATION_SCHEMA } from "./constants";
 import { useAppDispatch } from "../../../store/hooks";
 import { SignInFormValues } from "./types";
-import { LayoutAuth } from "../../ui/LayoutAuth";
 import styles from "./styles.module.scss";
+import { LayoutAuth } from "../../ui/LayoutAuth";
 
-export const SignIn = () => {
+export const SignUp = () => {
 	// const dispatch = useAppDispatch()
 
  	const {
@@ -29,9 +29,9 @@ export const SignIn = () => {
 
 	return (
 		<LayoutAuth>
-			<form className={styles["signin-form"]} onSubmit={handleSubmit(onSubmit)}>
+			<form className={styles["signup-form"]} onSubmit={handleSubmit(onSubmit)}>
 				{false && (
-					<div className={styles["signin-form__error"]}>{}</div>
+					<div className={styles["signup-form__error"]}>{}</div>
 				)}
 				<Input 
 					type="text"
@@ -48,10 +48,8 @@ export const SignIn = () => {
 					{required: true})} 
 				/>
 				<button type="submit" className={styles["button-submit"]}>{SUBMIT_LABEL}</button>
-				<div className={styles["signin-form__text"]}>
-					<Link className={styles["signin-form__text-link"]} to={`/sign_up`}>{LINK_SIGN_UP}</Link>
-					<span>&nbsp;{SUPPORT_LABEL}</span>
-				</div>
+				<Link className={styles["signup-form__text-link"]} to={`/sign_in`}>{LINK_SIGN_UP}</Link>
+				<div className={styles["signup-form__text"]}>{SUPPORT_LABEL}</div>
 			</form>
 		</LayoutAuth>
 	)

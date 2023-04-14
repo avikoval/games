@@ -6,6 +6,7 @@ import { store } from './store';
 import { App } from './pages/_app';
 import { XOGamePage } from './pages/xo-game';
 import { SignInPage } from './pages/sign-in';
+import { SignUpPage } from './pages/sign-up';
 import 'normalize.css';
 import './styles/global.css';
 
@@ -13,6 +14,10 @@ export const router = createBrowserRouter([
 	{
 		path: "sign_in",
 		element: <SignInPage />,
+	},
+	{
+		path: "sign_up",
+		element: <SignUpPage />,
 	},
 	{
 		path: "/",
