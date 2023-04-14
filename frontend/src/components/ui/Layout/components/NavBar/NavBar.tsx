@@ -36,7 +36,7 @@ export const NavBar = () => {
 						/>
 					</Link>
 					<Link className={styles["navbar__link"]} to={`xogame`}>XO</Link>
-					<Link className={styles["navbar__link"]} to={`signin`}>Lo</Link>
+					<Link className={styles["navbar__link"]} to={`sign_in`}>Lo</Link>
 				</div>
 			</div>
 		</div>
